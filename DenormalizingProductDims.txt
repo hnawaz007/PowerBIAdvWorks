@@ -2,9 +2,9 @@ let
     Source = Table.NestedJoin(DimProduct, {"ProductSubcategoryKey"}, DimProductSubcategory, {"ProductSubcategoryKey"}, "DimProdSubcat", JoinKind.LeftOuter),
     ExpandedDimProdSubcat = Table.ExpandTableColumn(Source, "DimProdSubcat", {"ProductSubcategoryKey", "EnglishProductSubcategoryName", "ProductCategoryKey"}, {"DimProdSubcat.ProductSubcategoryKey", "DimProdSubcat.EnglishProductSubcategoryName", "DimProdSubcat.ProductCategoryKey"}),
   
-    joinProdCat = Table.NestedJoin(ExpandedDimProdSubcat, {"DimProdSubcat.ProductCategoryKey"}, DimProductSubcategory, {"ProductCategoryKey"}, "DimProCat", JoinKind.LeftOuter),
-    ExpandedDimProCat = Table.ExpandTableColumn(joinProdCat, "DimProCat", {"EnglishProductSubcategoryName"}, {"DimProCat.EnglishProductSubcategoryName"}),
+    joinProdCat = Table.NestedJoin(ExpandedDimProdSubcat, {"DimProdSubcat.ProductCategoryKey"}, DimProductCategory, {"ProductCategoryKey"}, "DimProCat", JoinKind.LeftOuter),
+    ExpandedDimProCat = Table.ExpandTableColumn(joinProdCat, "DimProCat", {"EnglishProductSubcategoryName"}, {"DimProCat.EnglishProductCategoryName"}),
 
-    SelectProudctColumns = Table.SelectColumns(ExpandedDimProCat,{"ProductKey", "EnglishProductName", "EnglishDescription", "Status", "DimProdSubcat.ProductSubcategoryKey", "DimProdSubcat.EnglishProductSubcategoryName", "DimProCat.EnglishProductSubcategoryName"})
+    SelectProudctColumns = Table.SelectColumns(ExpandedDimProCat,{"ProductKey", "EnglishProductName", "EnglishDescription", "Status", "DimProdSubcat.ProductSubcategoryKey", "DimProdSubcat.EnglishProductSubcategoryName", "DimProCat.EnglishProductCategoryName"})
 in
     SelectProudctColumns
