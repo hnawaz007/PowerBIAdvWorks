@@ -1,0 +1,14 @@
+let
+    Source = Table.NestedJoin(DimCustomer, {"GeographyKey"}, DimGeography, {"GeographyKey"}, "DimGeo", JoinKind.LeftOuter),
+    ExpandedDimCustomer = Table.ExpandTableColumn(Source, "DimGeo", {"GeographyKey", "City","StateProvinceCode", "StateProvinceName", "CountryRegionCode",	"EnglishCountryRegionName", "PostalCode", "SalesTerritoryKey"}, 
+                {"DimGeo.GeographyKey", "DimGeo.City","DimGeo.StateProvinceCode", "DimGeo.StateProvinceName", "DimGeo.CountryRegionCode",	"DimGeo.EnglishCountryRegionName", "DimGeo.PostalCode", "DimGeo.SalesTerritoryKey"}),
+
+    joinSalesTerr = Table.NestedJoin(ExpandedDimCustomer, {"DimGeo.SalesTerritoryKey"}, DimSalesTerritory, {"SalesTerritoryKey"}, "DimSalesTerr", JoinKind.LeftOuter),
+    ExpandedDimSalesTerr = Table.ExpandTableColumn(joinSalesTerr, "DimSalesTerr", { "SalesTerritoryRegion", "SalesTerritoryCountry", "SalesTerritoryGroup"},
+                 { "DimSalesTerr.SalesTerritoryRegion", "DimSalesTerr.SalesTerritoryCountry", "DimSalesTerr.SalesTerritoryGroup"}),
+
+    SelectRequiredColumns = Table.SelectColumns(ExpandedDimSalesTerr,
+    { "CustomerKey", "Title", "FirstName", "LastName", "BirthDate", "MaritalStatus", "Gender",	"EmailAddress", "DimGeo.City","DimGeo.StateProvinceCode",
+         "DimGeo.StateProvinceName", "DimGeo.CountryRegionCode",	"DimGeo.EnglishCountryRegionName", "DimGeo.PostalCode", "DimGeo.SalesTerritoryKey", "DimSalesTerr.SalesTerritoryRegion", "DimSalesTerr.SalesTerritoryCountry", "DimSalesTerr.SalesTerritoryGroup"})
+in
+    SelectRequiredColumns
