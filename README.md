@@ -4,7 +4,7 @@
 ## Project Setup
 You will need the following Tech Stack to following along with this project. 
 
-- You can setup SQL Server's environment using the [following guidelines](https://www.youtube.com/watch?v=e5mvoKuV3xs&t=6s)
+- SQL Server. You can setup SQL Server's environment using the [following guidelines](https://www.youtube.com/watch?v=e5mvoKuV3xs&t=6s)
 - [Power BI Desktop](https://powerbi.microsoft.com/en-us/downloads/)
 
 ## Dimensional Modeling 101
