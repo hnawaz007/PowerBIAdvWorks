@@ -18,3 +18,5 @@ We develop a Star Schema using Dimensional Modeling in Power BI. We denormalize 
    ![image](star-schema-example1.png)
 
 ## Data Analysis via Dashboard
+
+![image](PBI Dashboard.png)
