@@ -1,2 +1,18 @@
-# PowerBIAdvWorks
-PowerBI Adventureworks data analysis
+# Power BI Data Analysis
+## End to End Data Analysis project using Power BI.
+
+## Project Setup
+You will need the following Tech Stack to following along with this project. 
+
+- You can setup SQL Server's environment using the [following guidelines](https://www.youtube.com/watch?v=e5mvoKuV3xs&t=6s)
+- [Power BI Desktop](https://powerbi.microsoft.com/en-us/downloads/)
+
+## Dimensional Modeling 101
+To understand Kimball’s approach to data modeling, we should begin by talking about the star schema. The star schema is a particular way of organizing data for analytical purposes. It consists of two types of tables:
+- A fact table, which acts as the primary table for the schema. A fact table contains the primary measurements, metrics, or ‘facts’ of a business process.
+- Many dimension tables associated with the fact table. Each dimension table contains ‘dimensions’ — that is, descriptive attributes of the fact table.
+
+  ## Develop Power BI Data Model
+
+
+   ![image](star-schema-example1.png)
