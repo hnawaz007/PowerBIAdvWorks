@@ -13,6 +13,8 @@ To understand Kimball’s approach to data modeling, we should begin by talking 
 - Many dimension tables associated with the fact table. Each dimension table contains ‘dimensions’ — that is, descriptive attributes of the fact table.
 
   ## Develop Power BI Data Model
-
+We develop a Star Schema using Dimensional Modeling in Power BI. We denormalize snlowflaked dimensions using M lnaguage in Power Query. Define relationship between Fact and dimension table. Clean and organize columns for the report layer. Our Data Model resembles a Star, just like the example below. Utilizing this Data Model we create reports and dashboards.
 
    ![image](star-schema-example1.png)
+
+## Data Analysis via Dashboard
