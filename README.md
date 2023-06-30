@@ -1,5 +1,5 @@
 # Power BI Data Analysis
-## [End to End Data Analysis project using Power BI.](https://www.youtube.com/watch?v=48yE1d2vOcY&ab_channel=BIInsightsInc)
+## [End to End Data Analysis project using Power BI](https://www.youtube.com/watch?v=48yE1d2vOcY)
 
 ## Project Setup
 You will need the following Tech Stack to following along with this project. 
